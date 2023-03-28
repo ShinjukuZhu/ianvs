@@ -169,7 +169,7 @@ class Module:
 
                 return func
             except Exception as err:
-                raise Exception(f"module(type={module_type} loads class(name={self.name}) "
+                raise RuntimeError(f"module(type={module_type} loads class(name={self.name}) "
                                 f"failed, error: {err}.") from err
 
         # call lib built-in module function

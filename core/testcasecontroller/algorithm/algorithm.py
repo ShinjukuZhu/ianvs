@@ -175,5 +175,5 @@ class Algorithm:
             try:
                 load_module(url)
             except Exception as err:
-                raise Exception(f"load third party packages(name={name}, url={url}) failed,"
+                raise RuntimeError(f"load third party packages(name={name}, url={url}) failed,"
                                 f" error: {err}.") from err
