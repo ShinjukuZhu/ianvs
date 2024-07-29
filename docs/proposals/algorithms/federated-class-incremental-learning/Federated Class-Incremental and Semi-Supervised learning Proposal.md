@@ -209,6 +209,7 @@ The benchmarking setting items  are  as shown follow:
   
   
   
+  
   where $C_{old}$ is the number of old classes, $acc_{i,j}$ is the accuracy of class i at incremental round j.
   
   
