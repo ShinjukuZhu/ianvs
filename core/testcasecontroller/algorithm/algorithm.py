@@ -23,6 +23,10 @@ from core.testcasecontroller.algorithm.paradigm import (
     SingleTaskLearning,
     IncrementalLearning,
     MultiedgeInference,
+    LifelongLearning,
+    FederatedLearning,
+    FederatedClassIncrementalLearning,
+    JointInference
 )
 from core.testcasecontroller.generation_assistant import get_full_combinations
 
@@ -110,6 +114,18 @@ class Algorithm:
 
         if self.paradigm_type == ParadigmType.MULTIEDGE_INFERENCE.value:
             return MultiedgeInference(workspace, **config)
+
+        if self.paradigm_type == ParadigmType.LIFELONG_LEARNING.value:
+            return LifelongLearning(workspace, **config)
+
+        if self.paradigm_type == ParadigmType.FEDERATED_LEARNING.value:
+            return FederatedLearning(workspace, **config)
+
+        if self.paradigm_type == ParadigmType.FEDERATED_CLASS_INCREMENTAL_LEARNING.value:
+            return FederatedClassIncrementalLearning(workspace, **config)
+
+        if self.paradigm_type == ParadigmType.JOINT_INFERENCE.value:
+            return JointInference(workspace, **config)
 
         return None
 
