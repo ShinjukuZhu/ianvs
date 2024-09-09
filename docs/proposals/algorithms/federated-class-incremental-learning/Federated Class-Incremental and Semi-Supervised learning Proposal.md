@@ -101,17 +101,13 @@ Federated incremental learning is a special kind of federated learning. However 
 
 Sedna is a edge-cloud collaborative training AI framework. It support federated learning ability. Base on Sedna, we can have a simple federated learning architecture: 
 
-![image-20240729150049512](FCI_SSL_image/federated_learning_architecture)
-
-
+![image-20240909194418085](FCI_SSL_image/federated_learning_architecture)
 
 It is quite clear and specific that the paradigm need to start the server and client in single node and then perform federated learning, the whole process can be shown as follow:
 
+![image-20240909194832334](FCI_SSL_image/paradigm_process_2)
 
-
-![image-20240729150728176](FCI_SSL_image/paradigm_process_2)
-
-
+Federated Learning Paradigm involved above process, `the yellow block` means the process that the paradigm will execute, `the green block` is the process that paradigm will invoke the estimator to execute and `the pink block` is the process that paradigm will invoke the aggregation to execute.
 
 Base on the above paradigm, we can conduct our federated-class-incremental learning paradigm and the timing diagram of the entire Benchmarking system is presented below: 
 
@@ -135,11 +131,7 @@ We will leverage the existed *TestEnvManager*, *TestCaseController* and *StoryMa
 
 The overall architecture is shown as follow: 
 
-
-
-![image-20240821171243966](FCI_SSL_image/architecture_design)
-
-
+![image-20240909194437318](FCI_SSL_image/architecture_design)
 
 We design a novel algorithm paradigm namely Federated-Class-Incremental-Learning Paradigm,  We specify the process of the algorithm paradigm as follows:
 
@@ -148,10 +140,9 @@ We design a novel algorithm paradigm namely Federated-Class-Incremental-Learning
 ![image-20240821171340432](FCI_SSL_image/paradigm_process)
 
 
+Federated Class Incremental Learning Paradigm involved above process, `the orange block` means the process that the paradigm will execute, `the green block` is the process that paradigm will invoke the estimator to execute and `the pink block` is the process that paradigm will invoke the aggregation to execute.
 
 In order to provide functionality extensibility and convenience to users, we have specified a process where most of the functionality can be replaced by user-implemented functionality(block in yellow). In addition, we require users to implement the server and client modules （block in green and orange） to complete the whole algorithm process. 
-
-
 
 ### 3.3 Benchmarking Design 
 
