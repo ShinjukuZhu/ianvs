@@ -63,12 +63,21 @@ class Algorithm:
             "train_ratio": 0.8,
             "splitting_method": "default"
         }
+        self.fl_data_setting: dict = {
+            "train_ratio": 1.0,
+            "splitting_method": "default",
+            "data_partition": "iid",
+            'non_iid_ratio': 0.6,
+            "label_data_ratio": 1.0
+        }
+
         self.initial_model_url: str = ""
         self.modules: list = []
         self.modules_list = None
         self._parse_config(config)
         self._load_third_party_packages()
 
+    # pylint: disable=R0911
     def paradigm(self, workspace: str, **kwargs):
         """
         get test process of AI algorithm paradigm.
@@ -90,7 +99,6 @@ class Algorithm:
         # pylint: disable=C0103
         for k, v in self.__dict__.items():
             config.update({k: v})
-
         if self.paradigm_type == ParadigmType.SINGLE_TASK_LEARNING.value:
             return SingleTaskLearning(workspace, **config)
 
